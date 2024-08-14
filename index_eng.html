@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UM4P Email Template Generator</title>
+    <link href="styles2.css" rel="stylesheet" />
+    
+</head>
+<body>
+    <h1>Let the Uni know your thoughts!</h1>
+    <div> 
+        <p> Steps: <br>
+            1. Choose the email template you'd like <br>
+            2. Choose who you would like to email <br>
+            3. Click Generate Template <br>
+            4. Edit the template to your preference, or leave as is <br>
+            5. Click on "Paste to mailing app" to open your email app and automatically populate your email<br>
+            (5b. Optional but encouraged: Check that the email is set to send from your University email address)  <br>
+            6. Send your email!</p>
+    </div>
+
+    <h1></h1>
+    <h1> &#127477;&#127480; Template Generator &#127477;&#127480; </h1>   
+
+
+	<form action="" method="get" id="overall">
+
+        <!-- Question 1: Name of sender -->
+        <div id="senderQuest">
+            <p>1. Your name: *</p>
+            <input type="text" id="name">
+        </div>
+
+        <!-- Question 2: Template of interest -->
+        <div id="templateQuest">
+            <p>2. Choose your email subject: * </p>
+            <input type="radio" name="templatecheck" id="template1" value="Disclosure request" checked="checked">
+            <label for="template1">Disclosure request</label> <br>
+            <input type="radio" name="templatecheck" id="template2" value="Following up on weapons disclosure from the University">
+            <label for="template2">Following up on weapons disclosure from the University</label> <br>
+            <input type="radio" name="templatecheck" id="template3" value="Disclosure & Divestment">
+            <label for="template3">Disclosure & Divestment</label> <br>
+        </div>            
+
+        <div class="container">
+    
+            <script src="app_eng.js"></script>
+            
+            <button type="button" onclick="generateTemplate()"> Generate template  </button>
+            
+            
+            <p id="alertNoTicks" style="display: none; color:red">Please select a template &#x1F6D1; </p>
+
+            <div id="showtemplate_1">
+                <h3>Recipients:</h3>
+                <textarea id="recipientField" rows="3"></textarea>
+                <p id="copyAlertEmails" style="color: cornflowerblue; font-size: .7em; display: none; padding: 0%;"> Email addresses copied to clipboard &#x1F600</p>
+                <button type="button" onclick="copyButtonRecipients()" style="font-size: small;background-color: rgb(3, 47, 3);color:white">Copy &#x2702;</button> 
+
+                <h3>Email Subject: </h3>
+                <textarea id="subjectField" contenteditable="true" rows="1"></textarea>
+                <p id="copyAlertSubject" style="color: cornflowerblue; font-size: .7em; display: none;"> Subject copied to clipboard &#x1F600</p>
+                <button type="button" onclick="copyButtonSubject()" style="font-size: small;background-color: rgb(3, 47, 3);color:white">Copy &#x2702;</button> 
+
+            </div>
+        
+            <div id="showtemplate_2">
+                <h3>Email body:</h3>
+                <textarea id="templateField" contenteditable="true" rows="25">  </textarea>
+                <p id="copyAlertBody" style="color: cornflowerblue; font-size: .7em; display: none;"> Email body copied to clipboard &#x1F600</p>
+                <button type="button" onclick="copyButtonBody()" style="font-size: small; background-color: rgb(3, 47, 3);color:white">Copy &#x2702;</button> 
+
+                <button type="button" id="updateButton" style="display:none;" onclick="openMailClient()">
+                    Auto-fill in my email app.
+                </button>
+                
+                <button type="button" id="autofillButton" style="display:none;" onclick="openMailClient()">
+                    Auto-fill in my email app.
+                </button>
+
+                <p id="finaloutputtext" style="display: none;">If button above doesn't work, please either allow pop-up, or copy and paste the following to your browser:</p>
+                <textarea id="finaloutput" cols="1" style="display: none;"></textarea>
+                <p id="copyAlertFinal" style="color: cornflowerblue; font-size: .7em; display: none;"> URL copied to clipboard &#x1F600</p>
+                <button type="button" onclick="copyButtonFinal()" style="font-size: small;background-color: rgb(3, 47, 3);color:white">Copy &#x2702;</button> 
+                
+
+            </div>
+
+            
+
+        </div>
+
+    </form>
+
+    <!-- <div> <embed src="../email_templates/template1.html" type="contenteditable"></div> -->
+</body>
+</html>
