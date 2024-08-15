@@ -27,7 +27,7 @@ function generateTemplate() {
     
     var templateCheck = []
 
-    let recipientList = "mark.cassidy@unimelb.edu.au"
+    let recipientList = "mark.cassidy@unimelb.edu.au, dvc-research@unimelb.edu.au"
     document.getElementById("alertNoTicks").style.display = "none"
     // document.getElementById("UnimelbOnly").style.display = "none"
     document.getElementById("autofillButton").style.display = "block"
