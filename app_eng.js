@@ -27,7 +27,7 @@ function generateTemplate() {
     
     var templateCheck = []
 
-    let recipientList = "mark.cassidy@unimelb.edu.au, dvc-research@unimelb.edu.au"
+    let recipientList = "ken.jefferd@unimelb.edu.au; s.prawer@unimelb.edu.au;"
     document.getElementById("alertNoTicks").style.display = "none"
     // document.getElementById("UnimelbOnly").style.display = "none"
     document.getElementById("autofillButton").style.display = "block"
@@ -36,9 +36,9 @@ function generateTemplate() {
     document.getElementById("showtemplate_1").style.display = "block"
     document.getElementById("showtemplate_2").style.display = "block"
     
-    let recipientNameListSpaced = "Professor Mark Cassidy"
-    let bulkmessage = "We email you with concern that the University of Melbourne has yet to meet the expectations set by its promise to disclose on May 24, 2024. We were promised that beginning in June, the university would progressively release further information in regards to its research projects and grant agreements. Hereto, we have seen a disappointing level of disclosure that hardly suppresses what one can find on Google.\n\nIn this regard, we are worried that there has been no genuine attempt at disclosure from our university because the nature of disclosure should encompass information that was kept hidden or otherwise private from the university's community.\n\nWe look forward to hearing further clarification on what the current status quo is—if the university will take further actions in its promise to disclose or if it is simply happy to stop at empty promises."
-    var finalmessage = "Dear "+recipientNameListSpaced+", \n "+bulkmessage+" \n\n Regards, \n "+personName+" \n A concerned member of the University of Melbourne's community."
+    let recipientNameListSpaced = "Mr Ken Jefferd and Prof Steven Prawer"
+    let bulkmessage = "I am deeply concerned and distressed that the University of Melbourne has an ongoing partnership with Hebrew University, whose campus is partially built on stolen Palestinian land in occupied East Jerusalem, in violation of international law. It also hosts the Havatzalot program, effectively a military base on campus that includes combat training for members of the IOF, as well as recruitment events for Shin Bet. The same IOF soldiers trained at Hebrew University are now at the forefront of the genocide in Gaza. \n\n I would like to echo the call from groups such as Unimelb for Palestine (UM4P) and the Unimelb branch of the NTEU and demand the University cut all ties with these institutions that have long played a willing role in planning, perpetuating, and justifying Israel's regime of illegal occupation, settler-colonialism and apartheid. This includes Hebrew University."
+    var finalmessage = "Dear "+recipientNameListSpaced+", \n My name is "+personName+". As a "+poscheck+", "+bulkmessage+" \n\n Regards, \n "+personName+" \n A concerned member of the University of Melbourne's community."
     document.getElementById("subjectField").value = document.querySelector('input[name="templatecheck"]:checked').value;
 
     document.getElementById('recipientField').value = recipientList
