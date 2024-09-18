@@ -24,6 +24,7 @@ function generateTemplate() {
     // document.getElementById("alertTempMelb").style.display = "none"
 
     let personName = document.getElementById('name').value
+    let posName = document.querySelector('input[name="poscheck"]:checked').value
     
     var templateCheck = []
 
@@ -38,9 +39,15 @@ function generateTemplate() {
     
     let recipientNameListSpaced = "Mr Ken Jefferd and Prof Steven Prawer"
     let bulkmessage = "I am deeply concerned and distressed that the University of Melbourne has an ongoing partnership with Hebrew University, whose campus is partially built on stolen Palestinian land in occupied East Jerusalem, in violation of international law. It also hosts the Havatzalot program, effectively a military base on campus that includes combat training for members of the IOF, as well as recruitment events for Shin Bet. The same IOF soldiers trained at Hebrew University are now at the forefront of the genocide in Gaza. \n\n I would like to echo the call from groups such as Unimelb for Palestine (UM4P) and the Unimelb branch of the NTEU and demand the University cut all ties with these institutions that have long played a willing role in planning, perpetuating, and justifying Israel's regime of illegal occupation, settler-colonialism and apartheid. This includes Hebrew University."
-    var finalmessage = "Dear "+recipientNameListSpaced+", \n My name is "+personName+". As a "+poscheck+", "+bulkmessage+" \n\n Regards, \n "+personName+" \n A concerned member of the University of Melbourne's community."
-    document.getElementById("subjectField").value = document.querySelector('input[name="templatecheck"]:checked').value;
+    
+    if ((personName == null || personName == "")) {
+        var finalmessage = "Dear "+recipientNameListSpaced+", \n\n As "+posName+", "+bulkmessage+" \n\n Regards, \n A concerned member of the University of Melbourne's community."
+    } else {
+        var finalmessage = "Dear "+recipientNameListSpaced+", \n My name is "+personName+". As "+posName+", "+bulkmessage+" \n\n Regards, \n "+personName+" \n A concerned member of the University of Melbourne's community."
+    }
+    // document.getElementById("subjectField").value = document.querySelector('input[name="templatecheck"]:checked').value;
 
+    document.getElementById("subjectField").value = "Cut ties with Hebrew University of Jerusalem"
     document.getElementById('recipientField').value = recipientList
     
     document.getElementById('templateField').innerHTML = finalmessage
